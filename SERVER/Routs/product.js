@@ -28,20 +28,36 @@ router.post('/proud',  async(req,res)=>{
    }
 })
 //  all restaurant find
-router.get('/proud', async(req ,res)=>{
-   try{
-       let product=    await   Product.find()
-       if(product){
-            return res.send(Product)
-       }
-       else{
-          return  res.send('prod not found')
-       }
+// router.get('/proud', async(req ,res)=>{
+//    try{
+//        let product=    await Product.find()
+//        console.log(product,"rrrrrrrrrrrrrrrrrrrrrrrrr");
+//        if(product){
+//             return res.send(Product)
+//        }
+//        else{
+//           return  res.send('prod not found')
+//        }
+//    }
+//    catch{
+//          res.send('errr')
+//    }
+// })
+
+
+router.get('/proud',async(req,res)=>{
+   let p=    await  Product.find()
+   if(!p){
+    return res.send('product not fount')
    }
-   catch{
-        return res.send('errr')
-   }
+   return res.send(p)
+//    res.send(p)
+
 })
+
+
+
+
 
 //////resturant find by using id
 router.get('/proud/:id',async(req,res)=>{
