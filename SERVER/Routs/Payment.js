@@ -5,11 +5,8 @@ const stripe = require('stripe')('sk_test_51P4JeWSAwzKxKMw8E8GEfSg9EqUqH7yHJQXvT
 let Restraurant=     require('../models/restaurant')
 let Product=     require('../models/product')
 const Order = require('../models/Order');
-// let Payment=require('../models/Payment')
 router.post("/payment", async (req, res) => {
   const { products ,restaurant} = req.body;
- 
-
   const lineItems = products.map((product) => ({
     price_data: {
       currency: "inr",
@@ -68,10 +65,4 @@ router.get('/past-orders', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
-
-
-
-
-
-
 module.exports = router;

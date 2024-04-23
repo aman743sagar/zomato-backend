@@ -103,7 +103,6 @@ router.delete('/restro/:id', async(req,res)=>{
     catch{
         res.send('errr')
     }
-      
 
 })
 module.exports=router

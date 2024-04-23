@@ -5,6 +5,7 @@ let productRouter=require('./SERVER/Routs/product')
 let loginRouter=require('./SERVER/Routs/login')
 let authRouter= require('./SERVER/Routs/auth')
 let PaymentMethode=require('./SERVER/Routs/Payment')
+let Rating=require('./SERVER/Routs/Rating')
 let cors= require('cors')
 mongoose.connect('mongodb://127.0.0.1:27017/zomato')
 
@@ -22,6 +23,7 @@ app.use('/api',productRouter)
 app.use('/api',authRouter)
 app.use('/api',loginRouter)
 app.use('/api',PaymentMethode)
+app.use('/api',Rating)
 
 let port=7000
 
